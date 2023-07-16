@@ -16,6 +16,7 @@
     "bcryptjs": "^2.4.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.10",
+    "lodash": "^4.17.21",
     "next": "13.4.10",
     "next-auth": "^4.22.1",
     "postcss": "8.4.26",
