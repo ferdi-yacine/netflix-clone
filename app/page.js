@@ -1,5 +1,6 @@
 "use client";
 
+import Billboard from "@/components/Billboard";
 import Navbar from "@/components/Navbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -8,7 +9,6 @@ export default function Home() {
   const session = useSession();
   const router = useRouter();
 
-  console.log(session)
   if (session.status === "loading") {
     return <p>Loading ...</p>;
   }
@@ -19,6 +19,7 @@ export default function Home() {
     return (
       <>
         <Navbar />
+        <Billboard />
       </>
     );
   }
