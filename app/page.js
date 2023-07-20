@@ -9,6 +9,7 @@ import useInfoModal from "@/hooks/useInfoModal";
 import useMovieList from "@/hooks/useMovieList";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Loading from "./loading";
 
 export default function Home() {
   const session = useSession();
@@ -20,7 +21,7 @@ export default function Home() {
 
 
   if (session.status === "loading") {
-    return <p>Loading ...</p>;
+    return <Loading />;
   }
   if (session.status === "unauthenticated") {
     router.push("/auth");

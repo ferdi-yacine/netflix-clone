@@ -3,15 +3,14 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Loading from "../loading";
 
 const Profiles = () => {
   const session = useSession();
   const router = useRouter();
 
-  console.log(session)
-
   if (session.status === "loading") {
-    return <p>Loading ...</p>;
+    return <Loading />;
   }
   if (session.status === "unauthenticated") {
     router.push("/auth");
